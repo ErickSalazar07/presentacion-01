@@ -17,11 +17,11 @@ import (
 func Nueva() (*gorm.DB, error) {
 	dsn := fmt.Sprintf(
 		"host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
-		getEnv("DB_HOST", "localhost"),
+		getEnv("DB_HOST", "default"),
 		getEnv("DB_PORT", "5432"),
-		getEnv("DB_USER", "default"),
-		getEnv("DB_PASSWORD", ""),
-		getEnv("DB_NAME", "appointments"),
+		getEnv("DB_USERNAME", "default"),
+		getEnv("DB_PASSWORD", "default"),
+		getEnv("DB_NAME", "default"),
 		getEnv("DB_SSLMODE", "disable"),
 	)
 
