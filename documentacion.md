@@ -21,8 +21,6 @@ __Estilo:__ Clean architecture
 
 La solución consiste en el desarrollo de un gestor de citas médicas, permitiendo administrar pacientes, doctores y la programación de citas entre ambos.
 
----
-
 ### 1. Modelado
 
 Se definen tres entidades principales:
