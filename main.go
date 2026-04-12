@@ -4,9 +4,9 @@ import (
 	"log"
 	"net/http"
 
+	"appointments/adapters/postgresql"
 	"appointments/application"
 	"appointments/infrastructure/db"
-	"appointments/adapters/postgresql"
 	"appointments/transport/graphql/generated"
 	"appointments/transport/graphql/resolver"
 
@@ -51,9 +51,25 @@ func main() {
 	)
 
 	// 7. Endpoints HTTP
-	http.Handle("/graphql", srv)
+	http.Handle("/graphql", enableCORS(srv))
 	http.Handle("/", playground.Handler("GraphQL playground", "/graphql"))
 
 	log.Println("🚀 servidor corriendo en http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
+}
+
+func enableCORS(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
+		// Handle preflight requests
+		if r.Method == http.MethodOptions {
+			w.WriteHeader(http.StatusOK)
+			return
+		}
+
+		next.ServeHTTP(w, r)
+	})
 }
