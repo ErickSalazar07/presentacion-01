@@ -2,7 +2,9 @@ package main
 
 import (
 	"log"
+	"net"
 	"net/http"
+	"os"
 
 	"appointments/adapters/postgresql"
 	"appointments/application"
@@ -13,6 +15,22 @@ import (
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 )
+
+func getLocalIP() string {
+	addrs, err := net.InterfaceAddrs()
+	if err != nil {
+		return "localhost"
+	}
+
+	for _, addr := range addrs {
+		if ipnet, ok := addr.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
+			if ipnet.IP.To4() != nil {
+				return ipnet.IP.String()
+			}
+		}
+	}
+	return "localhost"
+}
 
 func main() {
 	// 1. Conexión a DB
@@ -54,8 +72,8 @@ func main() {
 	http.Handle("/graphql", enableCORS(srv))
 	http.Handle("/", playground.Handler("GraphQL playground", "/graphql"))
 
-	log.Println("🚀 servidor corriendo en http://localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Printf("servidor corriendo en http://%s:8081\n", getLocalIP())
+	log.Fatal(http.ListenAndServe(":8081", nil))
 }
 
 func enableCORS(next http.Handler) http.Handler {

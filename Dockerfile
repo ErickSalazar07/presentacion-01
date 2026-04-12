@@ -1,28 +1,24 @@
-# Build stage
-FROM golang:1.25-alpine AS builder
+# ---------- BUILD ----------
+FROM docker.io/library/golang:1.25-alpine AS builder
 
 WORKDIR /app
 
-# Copy go mod files first for better layer caching
+RUN apk add --no-cache git
+
 COPY go.mod go.sum ./
 RUN go mod download
 
-# Copy source code
 COPY . .
 
-# Build the binary
-RUN CGO_ENABLED=0 GOOS=linux go build -o main .
+RUN go build -o app .
 
-# Run stage
-FROM alpine:latest
+# ---------- RUN ----------
+FROM docker.io/library/alpine:latest
 
-RUN apk --no-cache add ca-certificates
+WORKDIR /app
 
-WORKDIR /root/
+COPY --from=builder /app/app .
 
-# Copy binary from builder
-COPY --from=builder /app/main .
+EXPOSE 8081
 
-EXPOSE 8080
-
-CMD ["./main"]
+CMD ["./app"]
