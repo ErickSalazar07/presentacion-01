@@ -1,0 +1,28 @@
+schema:
+  - transport/graphql/schema.graphqls
+
+exec:
+  filename: transport/graphql/generated/generated.go
+  package: generated
+
+model:
+  filename: transport/graphql/model/models_gen.go
+  package: model
+
+resolver:
+  layout: follow-schema
+  dir: transport/graphql/resolver
+  package: resolver
+  filename_template: "{name}.resolvers.go"
+
+# Mapea los tipos del schema a las entidades de dominio
+# para que gqlgen no genere structs duplicados
+models:
+  Paciente:
+    model: appointments/domain/entities.Paciente
+  Doctor:
+    model: appointments/domain/entities.Doctor
+  Cita:
+    model: appointments/domain/entities.Cita
+  EstadoCita:
+    model: appointments/domain/entities.EstadoCita

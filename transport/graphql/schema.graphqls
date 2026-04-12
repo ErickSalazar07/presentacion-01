@@ -1,0 +1,101 @@
+scalar DateTime
+
+# — Tipos —
+
+type Paciente {
+  id:              Int!
+  nombre:          String!
+  email:           String!
+  telefono:        String!
+  fechaNacimiento: DateTime!
+  createdAt:       DateTime!
+  citas:           [Cita!]!
+}
+
+type Doctor {
+  id:           Int!
+  nombre:       String!
+  especialidad: String!
+  email:        String!
+  createdAt:    DateTime!
+  citas:        [Cita!]!
+}
+
+type Cita {
+  id:        Int!
+  estado:    EstadoCita!
+  motivo:    String!
+  fechaHora: DateTime!
+  createdAt: DateTime!
+  paciente:  Paciente!
+  doctor:    Doctor!
+}
+
+enum EstadoCita {
+  pendiente
+  confirmada
+  cancelada
+  completada
+}
+
+# — Inputs —
+
+input RegistrarPacienteInput {
+  nombre:          String!
+  email:           String!
+  telefono:        String!
+  fechaNacimiento: DateTime!
+}
+
+input RegistrarDoctorInput {
+  nombre:       String!
+  especialidad: String!
+  email:        String!
+}
+
+input AgendarCitaInput {
+  pacienteID: Int!
+  doctorID:   Int!
+  motivo:     String!
+  fechaHora:  DateTime!
+}
+
+input ActualizarEstadoInput {
+  id:     Int!
+  estado: EstadoCita!
+}
+
+# — Queries —
+
+type Query {
+  # Caso de uso 4: Consultar citas por paciente
+  citasPorPaciente(pacienteID: Int!): [Cita!]!
+
+  # Caso de uso 5: Consultar citas por doctor
+  citasPorDoctor(doctorID: Int!): [Cita!]!
+
+  pacientes: [Paciente!]!
+  paciente(id: Int!): Paciente!
+
+  doctores: [Doctor!]!
+  doctor(id: Int!): Doctor!
+}
+
+# — Mutations —
+
+type Mutation {
+  # Caso de uso 1: Registrar paciente
+  registrarPaciente(input: RegistrarPacienteInput!): Paciente!
+
+  # Caso de uso 2: Registrar doctor
+  registrarDoctor(input: RegistrarDoctorInput!): Doctor!
+
+  # Caso de uso 3: Agendar cita
+  agendarCita(input: AgendarCitaInput!): Cita!
+
+  # Caso de uso 6: Actualizar estado
+  actualizarEstadoCita(input: ActualizarEstadoInput!): Cita!
+
+  # Caso de uso 7: Cancelar cita
+  cancelarCita(id: Int!): Cita!
+}
