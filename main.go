@@ -4,7 +4,6 @@ import (
 	"log"
 	"net"
 	"net/http"
-	"os"
 
 	"appointments/adapters/postgresql"
 	"appointments/application"
@@ -15,22 +14,6 @@ import (
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 )
-
-func getLocalIP() string {
-	addrs, err := net.InterfaceAddrs()
-	if err != nil {
-		return "localhost"
-	}
-
-	for _, addr := range addrs {
-		if ipnet, ok := addr.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
-			if ipnet.IP.To4() != nil {
-				return ipnet.IP.String()
-			}
-		}
-	}
-	return "localhost"
-}
 
 func main() {
 	// 1. Conexión a DB
@@ -90,4 +73,20 @@ func enableCORS(next http.Handler) http.Handler {
 
 		next.ServeHTTP(w, r)
 	})
+}
+
+func getLocalIP() string {
+	addrs, err := net.InterfaceAddrs()
+	if err != nil {
+		return "localhost"
+	}
+
+	for _, addr := range addrs {
+		if ipnet, ok := addr.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
+			if ipnet.IP.To4() != nil {
+				return ipnet.IP.String()
+			}
+		}
+	}
+	return "localhost"
 }
