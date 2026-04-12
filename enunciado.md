@@ -2,63 +2,87 @@
 
 ## Objetivo
 
-Capacitar al estudiante en la selección, modelado e implementación de soluciones de software mediante el análisis de estilos arquitectónicos y stacks
-tecnológicos reales, utilizando el modelo C4 y criterios técnicos para sustentar la toma de decisiones. La actividad se centra en:
+- Capacitar al estudiante en la selección, modelado e implementación de soluciones de software mediante el análisis de estilos arquitectónicos y stacks
+tecnológicos reales, utilizando el modelo C4 y criterios técnicos para sustentar la toma de decisiones.
 
-Comprensión de estilos arquitectónicos y patrones asociados. Uso de stacks tecnológicos reales. Aplicación de patrones de diseño. Modelado de soluciones
-mediante C4 Model. Implementación de arquitectura. Análisis de decisiones arquitectónicas asociadas al estilo y al stack.
+La actividad se centra en:
+- Comprensión de estilos arquitectónicos y patrones asociados.
+- Uso de stacks tecnológicos reales. Aplicación de patrones de diseño. Modelado de soluciones mediante C4 Model.
+- Implementación de arquitectura.
+- Análisis de decisiones arquitectónicas asociadas al estilo y al stack.
 
 1. Requerimientos del Stack Tecnológico
 
 Cada grupo deberá definir e implementar un stack tecnológico único, compuesto obligatoriamente por:
 
-Frontend: Una tecnología de interfaz de usuario.
-Backend: Un framework y runtime de servidor. Persistencia: Una base de datos (relacional o no relacional).
-Protocolo de Integración: Definición clara de comunicación (ej. REST, GraphQL, gRPC, WebSockets).
-Componentes Adicionales: El grupo podrá seleccionar herramientas complementarias según las necesidades de su diseño.
+- __Frontend:__ Una tecnología de interfaz de usuario.
+- __Backend:__ Un framework y runtime de servidor. Persistencia: Una base de datos (relacional o no relacional).
+- __Protocolo de Integración:__ Definición clara de comunicación (ej. REST, GraphQL, gRPC, WebSockets).
+- __Componentes Adicionales:__ El grupo podrá seleccionar herramientas complementarias según las necesidades de su diseño.
 
 2. Alcance del Caso Práctico
 
 La solución desarrollada debe ser funcional y técnicamente consistente con el estilo arquitectónico elegido, cumpliendo con los siguientes mínimos:
 
+- __Modelado:__ Mínimo 3 entidades de negocio interrelacionadas.
+- __Flujo Funcional:__ Implementación de un caso de uso completo de extremo a extremo (end-to-end).
+- __Persistencia:__ Gestión real de datos en el motor seleccionado.
+- __Robustez:__ Implementación de manejo de errores y validaciones.
+- __Justificación:__ Todas las decisiones técnicas deben estar sustentadas en las características del estilo y el stack.
 
-Modelado: Mínimo 3 entidades de negocio interrelacionadas.
-Flujo Funcional: Implementación de un caso de uso completo de extremo a extremo (end-to-end).
-Persistencia: Gestión real de datos en el motor seleccionado.
-Robustez: Implementación de manejo de errores y validaciones.
-Justificación: Todas las decisiones técnicas deben estar sustentadas en las características del estilo y el stack.
+## Hacer: Investigación del estilo y stack
 
-__Hacer:__ Investigación del estilo y stack
+### Para el estilo arquitectónico, el grupo deberá desarrollar:
 
-Para el estilo arquitectónico, el grupo deberá desarrollar:
+- Definición clara (qué es y qué no es).
+- Clasificacion del estilo.
+- Características principales.
+- Historia y evolución.
+- Ventajas y desventajas.
+- Problemas comunes que se presentan y patrones.
+- Identificar patrones aplicables y cuando usarlos.
+- Casos de uso (cuándo usarlo y cuándo no).
+- Casos de aplicación (ejemplos reales en la industria).
 
-Definición clara (qué es y qué no es). Clasificacion del estilo. Características principales. Historia y evolución. Ventajas y desventajas. Problemas
-comunes que se presentan y patrones. Identificar patrones aplicables y cuando usarlos. Casos de uso (cuándo usarlo y cuándo no). Casos de aplicación
-(ejemplos reales en la industria).
+### Para cada una de las tecnologías del stack asignado, el grupo deberá desarrollar:
 
-Para cada una de las tecnologías del stack asignado, el grupo deberá desarrollar:
-
-Definición clara (qué es y qué no es). Características principales. Historia y evolución. Ventajas y desventajas. Casos de uso (cuándo usarlo y cuándo
-no). Casos de aplicación (ejemplos reales en la industria). Relación entre el estilo y las tecnologías seleccionadas. Que tan común es el stack designado
-(ralacion entre tecnologias).
+- Definición clara (qué es y qué no es).
+- Características principales.
+- Historia y evolución.
+- Ventajas y desventajas.
+- Casos de uso (cuándo usarlo y cuándo no).
+- Casos de aplicación (ejemplos reales en la industria).
+- Relación entre el estilo y las tecnologías seleccionadas.
+- Que tan común es el stack designado (relacion entre tecnologias).
 
 ## Análisis arquitectónico
 
 realizar matrices de analisis arquitectonicas
 
-Matriz de atributos de calidad vs estilo: Identificar cómo el estilo soporta o limita cada atributo de calidad. Matriz de análisis de Principios vs
-estilo: Identificar como el estilo cumple los principios SOLID, KISS, DRY, YAGNI, PoLA, Ley de Demeter, STUPID y Composicion sobre Herencia. Matriz de
-análisis de tácticas vs estilo y stack: Identificar como un ADR puede ser justificado para el estilo y stack asignado. Matriz de análisis de mercado
-Laboral vs estilo y stack: Identidficar como esta el mercado actual para el estilo y el estack definido, con salarios mensuales o anueles y la proyeccion
-que tienen en el mercado laboral. (posibles fuentes: encuesta anual de GitHub, JetBrains o StackOverflow, TIOBE Index, PYPL, IEEE Spectrum, Gartner,
-TechnoVision  HackerRank Developer Skills Report, Hired / LinkedIn Economic Graph)
+- __Matriz de atributos de calidad vs estilo:__ Identificar cómo el estilo soporta o limita cada atributo de calidad.
+- __Matriz de análisis de Principios vs estilo:__ Identificar como el estilo cumple los principios SOLID, KISS, DRY, YAGNI, PoLA, Ley de Demeter, STUPID y
+  Composicion sobre Herencia.
+- __Matriz de análisis de tácticas vs estilo y stack:__ Identificar como un ADR puede ser justificado para el estilo y stack asignado.
+- __Matriz de análisis de mercado Laboral vs estilo y stack:__ Identificar como esta el mercado actual para el estilo y el estack definido, con salarios
+  mensuales o anueles y la proyeccion que tienen en el mercado laboral. (posibles fuentes: encuesta anual de GitHub, JetBrains o StackOverflow, TIOBE
+  Index, PYPL, IEEE Spectrum, Gartner, TechnoVision  HackerRank Developer Skills Report, Hired / LinkedIn Economic Graph)
 
 ## Diseño: Ejemplo práctico y funcional
 
 El sistema debe ser modelado utilizando HLD +  C4 Model:
 
-Obligatorio: Diagrama de alto nivel (HLD) Diagrama de Contexto (Nivel 1) Diagrama de Contenedores (Nivel 2) Diagrama Dinámico (flujo principal) Diagrama
-de Despliegue Opcional: Diagrama de componentes (Nivel 3) Diagrama de Codigo (Nivel 3) Diagrama de System landscape Modelo de datos.
+__Obligatorio:__
+- Diagrama de alto nivel (HLD)
+- Diagrama de Contexto (Nivel 1)
+- Diagrama de Contenedores (Nivel 2)
+- Diagrama Dinámico (flujo principal)
+- Diagrama de Despliegue
+
+__Opcional:__
+- Diagrama de componentes (Nivel 3)
+- Diagrama de Codigo (Nivel 3)
+- Diagrama de System landscape
+- Modelo de datos.
 
 ## Implementacion: Ejemplo práctico y funcional
 
@@ -67,9 +91,23 @@ entre componentes
 
 ## Entregables
 
-Documento técnico Investigación Análisis arquitectónico Diseño ejemplo practico Lecciones aprendidas Repositorio Git público Código fuente Creacion de
-TAG y Release README con: Descripción del sistema Tecnologías usadas Pasos para despliegue Presentación Uso de diagramas e infografías Explicación
-clara de los temas Estructura fluida Uso adecuado de colores
+- Documento técnico
+- Investigación
+- Análisis arquitectónico
+- Diseño ejemplo practico
+- Lecciones aprendidas
+- Repositorio Git público
+- Código fuente
+- Creacion de TAG y Release
+- README con:
+    + Descripción del sistema
+    + Tecnologías usadas
+    + Pasos para despliegue
+- Presentación
+- Uso de diagramas e infografías
+- Explicación clara de los temas
+- Estructura fluida
+- Uso adecuado de colores
 
 ## Sustentación
 
@@ -82,44 +120,35 @@ Exposición de 10 a 20 minutos por grupo Todos los integrantes deben participar
 
 Se refiere a la organización macroscópica del sistema. A. Estilos Estructurales (Lógica y Organización)
 
-Monolítico: Monolito Modular, Microkernel (Plug-in), Monolito Monolítico. Capas (Layered Architecture): N-Tiers, Local o Distribuido, Capas Cerradas
-vs. Abiertas. Arquitecturas de Dominio / "Círculos": Arquitectura Hexagonal (Ports & Adapters). Onion Architecture. Clean Architecture. Screaming
-Architecture.
+- __Monolítico:__ Monolito Modular, Microkernel (Plug-in), Monolito Monolítico.
+- __Capas (Layered Architecture):__ N-Tiers, Local o Distribuido, Capas Cerradas vs Abiertas.
+- __Arquitecturas de Dominio / "Círculos":__ Arquitectura Hexagonal (Ports & Adapters). Onion Architecture. Clean Architecture. Screaming Architecture.
 
 ### B. Estilos Distribuidos y Cloud-Native
 
-Cliente-Servidor:
-Frontend / Backend (SPA + API) y P2P (Peer-to-Peer). SOA (Service-Oriented Architecture): ESB-based.
+- __Cliente-Servidor:__ Frontend / Backend (SPA + API) y P2P (Peer-to-Peer).
+- __SOA (Service-Oriented Architecture):__ ESB-based.
 
-Microservicios:
-Orquestados vs. Coreografiados. Serverless / FaaS (Function as a Service): Arquitecturas efímeras y escalado a cero. Space-Based Architecture: Para alta
-escalabilidad basada en memoria compartida/tuplas. Event-Driven
+- __Microservicios:__ Orquestados vs Coreografiados.
+- __Serverless / FaaS (Function as a Service):__ Arquitecturas efímeras y escalado a cero.
+- __Space-Based Architecture:__ Para alta escalabilidad basada en memoria compartida/tuplas. Event-Driven
 
-Architecture (EDA):
-Broker, Mediator, Streaming. Mensajería Asíncrona: Publicador-Suscriptor (Pub-Sub) y Colas de Mensajes.
+- __Architecture (EDA):__ Broker, Mediator, Streaming.
+- __Mensajería Asíncrona:__ Publicador-Suscriptor (Pub-Sub) y Colas de Mensajes.
 
 ### C. Estilos de Datos y Mensajería
 
-Arquitectura Centrada en Datos:
-Data-Centric, blackboard.
-
-Streaming:
-Procesamiento en tiempo real (Streaming).
-
-Tuberías y Filtros (Pipes &amp; Filters):
-Procesamiento secuencial.
-
-Kappa & Lambda Architectures:
-Fundamentales para Big Data y analítica en tiempo real.
-
-Data Mesh: Arquitectura de datos distribuida por dominios.
-
-Data Lake y Data WareHouse: Arquitectura de datos
+- __Arquitectura Centrada en Datos:__ Data-Centric, blackboard.
+- __Streaming:__ Procesamiento en tiempo real (Streaming).
+- __Tuberías y Filtros (Pipes &amp; Filters):__ Procesamiento secuencial.
+- __Kappa & Lambda Architectures:__ Fundamentales para Big Data y analítica en tiempo real.
+- __Data Mesh:__ Arquitectura de datos distribuida por dominios. Data Lake y Data WareHouse: Arquitectura de datos
 
 ### D. Patrones de Presentación (Frontend/UI)
 
-MVC, MVP, MVVM. Flux / Redux / MVI (Model-View-Intent). Island Architecture:
-(Renderizado selectivo moderno). Micro-frontends: (Extensión del concepto de microservicios a la UI).
+MVC, MVP, MVVM. Flux / Redux / MVI (Model-View-Intent).
+- __Island Architecture:__ (Renderizado selectivo moderno).
+- __Micro-frontends:__ (Extensión del concepto de microservicios a la UI).
 
 ## 2. PATRONES ASOCIADOS
 
@@ -129,8 +158,10 @@ Microservicios, es obligatorio hablar de API Gateway y Circuit Breaker, pero si 
 Persistencia y Gestión de Estado
 
 Patrones de Acceso:
-DAO, Repository, Unit of Work, Data Mapper, Active Record. Estrategias de Datos: Database per Service, Shared Database (Anti-patrón en ciertos
-contextos). Consistencia y Consulta: CQRS, Event Sourcing, Materialized View. Bajo Nivel: Write-Ahead Log (WAL).
+DAO, Repository, Unit of Work, Data Mapper, Active Record.
+- __Estrategias de Datos:__ Database per Service, Shared Database (Anti-patrón en ciertos contextos).
+- __Consistencia y Consulta:__ CQRS, Event Sourcing, Materialized View.
+- __Bajo Nivel:__ Write-Ahead Log (WAL).
 
 ### B. Comunicación e Integración
 
