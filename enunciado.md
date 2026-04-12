@@ -34,6 +34,9 @@ La solución desarrollada debe ser funcional y técnicamente consistente con el 
 
 ### Para el estilo arquitectónico, el grupo deberá desarrollar:
 
+> [!IMPORTANT]
+> Revisar documento Word
+
 - Definición clara (qué es y qué no es).
 - Clasificacion del estilo.
 - Características principales.
@@ -46,6 +49,9 @@ La solución desarrollada debe ser funcional y técnicamente consistente con el 
 
 ### Para cada una de las tecnologías del stack asignado, el grupo deberá desarrollar:
 
+> [!IMPORTANT]
+> Revisar documento Word
+
 - Definición clara (qué es y qué no es).
 - Características principales.
 - Historia y evolución.
@@ -56,6 +62,9 @@ La solución desarrollada debe ser funcional y técnicamente consistente con el 
 - Que tan común es el stack designado (relacion entre tecnologias).
 
 ## Análisis arquitectónico
+
+> [!IMPORTANT]
+> Hacer en el word
 
 realizar matrices de analisis arquitectonicas
 
@@ -68,6 +77,9 @@ realizar matrices de analisis arquitectonicas
   Index, PYPL, IEEE Spectrum, Gartner, TechnoVision  HackerRank Developer Skills Report, Hired / LinkedIn Economic Graph)
 
 ## Diseño: Ejemplo práctico y funcional
+
+> [!IMPORTANT]
+> Hacer en el word
 
 El sistema debe ser modelado utilizando HLD +  C4 Model:
 
@@ -86,10 +98,17 @@ __Opcional:__
 
 ## Implementacion: Ejemplo práctico y funcional
 
-Código funcional en repositorio Git público con TAG Uso obligatorio de contenedores: Docker o Podman Implementación del flujo principal Integración
-entre componentes
+> [!IMPORTANT]
+> Usar VMs de los integrantes
+
+- Código funcional en repositorio Git público con TAG
+- Uso obligatorio de contenedores: Docker o Podman
+- Implementación del flujo principal Integración entre componentes
 
 ## Entregables
+
+> [!IMPORTANT]
+> Tener los siguientes apartados
 
 - Documento técnico
 - Investigación
